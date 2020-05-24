@@ -1,0 +1,36 @@
+name: Docker Workflow
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Frontend Image
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      run: |
+        cd frontend
+        docker build -t $DOCKER_USERNAME/stayio-frontend .
+    - name: Build Backend Image
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }} 
+      run: |  
+        cd backend
+        docker build -t $DOCKER_USERNAME/stayio-backend .
+    - name: Deploy to DockerHub
+      if: github.ref == 'master'
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }} 
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |  
+        cd frontend
+        docker build -t $DOCKER_USERNAME/stayio-frontend .
+        cd ../backend
+        docker build -t $DOCKER_USERNAME/stayio-backend .
+        cd ..
+        docker push $DOCKER_USERNAME/stayio-frontend
+        docker push $DOCKER_USERNAME/stayio-backend
