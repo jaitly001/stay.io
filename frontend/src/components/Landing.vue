@@ -23,12 +23,15 @@
     </b-navbar>
     <b-jumbotron class="mb-0">
       <template v-slot:header>Trustable Lodging</template>
-      <template v-slot:lead>
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
-      </template>
+      <template
+        v-slot:lead
+      >simple, scalable, containerized rating application made on open-source technologies</template>
       <b-button variant="primary" @click="gotoLogin">Get Started</b-button>
-      <b-button class="ml-2" variant="dark" href="#">View Source Code</b-button>
+      <b-button
+        class="ml-2"
+        variant="dark"
+        href="https://github.com/jaitly001/stay.io"
+      >View Source Code</b-button>
     </b-jumbotron>
     <div class="d-flex bg-dark text-light align-items-center justify-content-center px-3 py-2">
       <span class="py-2">Made with VueJS</span>

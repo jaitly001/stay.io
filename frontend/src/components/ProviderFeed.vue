@@ -5,7 +5,7 @@
         <b-col>
           <b-button pill variant="dark" @click="addListingTrigger">Add New Listing</b-button>
         </b-col>
-        <b-col class="text-right pt-4">
+        <b-col class="text-right pt-2">
           <span v-if="ready">You have {{ allListings().length }} listings</span>
           <span v-else>Not Ready</span>
         </b-col>

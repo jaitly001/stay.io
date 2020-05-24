@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-container>
-      <b-row>
+      <b-row class="pt-2">
         <b-col>
           <h2 class="mb-0 text-center">Search Results for '{{search.searchTerm}}'</h2>
         </b-col>

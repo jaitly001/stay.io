@@ -19,10 +19,12 @@ jobs:
         run: |
           cd backend
           docker build -t $DOCKER_USERNAME/stayio-backend .
-      - name: Deploy to DockerHub
+      - name: Push Images to Package Registries
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          GH_DOCKER_TOKEN: ${{ secrets.GH_DOCKER_TOKEN }}
+          GH_USERNAME: ${{ secrets.GH_USERNAME }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
           cd frontend
@@ -32,3 +34,8 @@ jobs:
           cd ..
           docker push $DOCKER_USERNAME/stayio-frontend
           docker push $DOCKER_USERNAME/stayio-backend
+          echo "$GH_DOCKER_TOKEN" | docker login docker.pkg.github.com -u $GH_USERNAME --password-stdin
+          docker tag $DOCKER_USERNAME/stayio-frontend docker.pkg.github.com/$GH_USERNAME/stay.io/stayio-frontend
+          docker tag $DOCKER_USERNAME/stayio-backend docker.pkg.github.com/$GH_USERNAME/stay.io/stayio-backend
+          docker push docker.pkg.github.com/$GH_USERNAME/stay.io/stayio-frontend
+          docker push docker.pkg.github.com/$GH_USERNAME/stay.io/stayio-backend

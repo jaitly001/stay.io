@@ -223,8 +223,11 @@ export default {
     },
     calculateRating() {
       const avg =
-        this.rating.ratings.reduce((a, b) => a + b.rating, 0) /
-        this.rating.ratings.length;
+        Math.round(
+          100 *
+            (this.rating.ratings.reduce((a, b) => a + b.rating, 0) /
+              this.rating.ratings.length)
+        ) / 100;
       return avg;
     },
     isLikedByUser(lid) {
