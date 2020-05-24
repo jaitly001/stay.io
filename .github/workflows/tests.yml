@@ -5,14 +5,14 @@ on:
   pull_request:
     branches: [master]
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Frontend Unit Tests
         run: |
           cd frontend
-          npm install -g @vue/cli
+          sudo npm install -g @vue/cli
           npm install
           npm run test
       - name: Backend Unit Tests
