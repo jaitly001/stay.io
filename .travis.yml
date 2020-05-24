@@ -24,18 +24,6 @@ jobs:
       name: "Build Docker Images"
       script:
         - cd frontend
-        - docker build -t rishabhjaitly/stayio-frontend .
+        - docker build -t $DOCKER_USERNAME/stayio-frontend .
         - cd ../backend
-        - docker build -t rishabhjaitly/stayio-backend .
-    - if: branch = master
-      stage: deploy
-      name: "Deploy to DockerHub"
-      before_script:
-        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      script:
-        - cd frontend
-        - docker build -t rishabhjaitly/stayio-frontend .
-        - docker push rishabhjaitly/stayio-frontend
-        - cd ../backend
-        - docker build -t rishabhjaitly/stayio-backend .
-        - docker push rishabhjaitly/stayio-backend
+        - docker build -t $DOCKER_USERNAME/stayio-backend .
