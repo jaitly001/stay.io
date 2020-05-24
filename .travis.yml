@@ -32,7 +32,6 @@ jobs:
       name: "Deploy to DockerHub"
       before_script:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - cd ..
       script:
         - cd frontend
         - docker build -t rishabhjaitly/stayio-frontend .
