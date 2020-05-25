@@ -1,8 +1,8 @@
 # stay.io
 
 [![GitHub](https://img.shields.io/github/license/jaitly001/stay.io?style=flat-square)](http://github.com/jaitly001/stay.io/blob/master/LICENSE.md "The MIT Open-Source License")
-[![stayio-frontend Image Size](https://img.shields.io/docker/image-size/rishabhjaitly/stayio-frontend?label=frontend&logo=docker&style=flat-square)](https://hub.docker.com/repository/docker/rishabhjaitly/stayio-frontend "stayio-frontend Image Size")
-[![stayio-backend Image Size](https://img.shields.io/docker/image-size/rishabhjaitly/stayio-backend?label=backend&logo=docker&style=flat-square)](https://hub.docker.com/repository/docker/rishabhjaitly/stayio-backend "stayio-backend Image Size")
+[![stayio-frontend Image Size](https://img.shields.io/docker/image-size/rishabhjaitly/stayio-frontend?label=frontend&logo=docker&style=flat-square)](https://hub.docker.com/r/rishabhjaitly/stayio-frontend "stayio-frontend Image Size")
+[![stayio-backend Image Size](https://img.shields.io/docker/image-size/rishabhjaitly/stayio-backend?label=backend&logo=docker&style=flat-square)](https://hub.docker.com/r/rishabhjaitly/stayio-backend "stayio-backend Image Size")
 [![CI Build Status](https://img.shields.io/travis/com/jaitly001/stay.io?logo=travis&style=flat-square)](https://travis-ci.com/github/jaitly001/stay.io "CI Build Status")
 [![GitHub Tests Workflow](https://img.shields.io/github/workflow/status/jaitly001/stay.io/Tests%20Workflow?label=tests&logo=github&style=flat-square)](https://github.com/jaitly001/stay.io/actions?query=workflow%3A%22Tests+Workflow%22 "GitHub Tests Workflow")
 [![GitHub Build Workflow](https://img.shields.io/github/workflow/status/jaitly001/stay.io/Build%20Workflow?label=build&logo=github&style=flat-square)](https://github.com/jaitly001/stay.io/actions?query=workflow%3A%22Build+Workflow%22 "GitHub Build Workflow")
@@ -20,6 +20,8 @@ The application is available to be deployed in a multi-container deployment acco
 [View CI Build Status](http://travis-ci.com/github/jaitly001/stay.io)
 
 [View GitHub Workflows](https://github.com/jaitly001/stay.io/actions)
+
+DockerHub Links: [frontend](https://hub.docker.com/r/rishabhjaitly/stayio-frontend) [backend](https://hub.docker.com/r/rishabhjaitly/stayio-backend)
 
 ## Quick Start
 
